@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+	<!------ Include the above in your HEAD tag ---------->
+
+	<nav class="navbar navbar-default">
+	   <div class="container-fluid">
+	     <div class="navbar-header">
+	      <a class="navbar-brand" href="#">SILPH</a>
+	     </div>
+	    <ul class="nav navbar-nav">
+	        <li class="active"><a th:href="@{/index}">Home</a></li>
+	       	<li><a th:href="@{/login}">Login</a></li>
+		  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
+		  	<li><a th:href="@{/album}">Album</a></li>
+		  	<li><a th:href="@{/foto}">Foto</a></li>
+	     </ul>
+	  </div>
+	</nav>
+
+	<!-- 
+	<div>
+		<h2 style="text-align:center;">Fotografi</h2>
+		<ul>
+			<li th:each="fotografo : ${fotografi}"> 
+				<a th:href="@{'/fotografo' + '/' + ${fotografo.nomeArte}}" th:text="${fotografo.nomeArte}"> </a>
+			</li>
+		</ul>
+	</div>
+	 -->
+	
+	<h2 style="text-align:center;">Fotografi</h2>
+	
+	<br/	>
+	
+	<table class="table table-bordered">
+		<thead>
+			  <tr>
+				    <th scope="col">Nome</th>
+				    <th scope="col">Cognome</th>
+				    <th scope="col">Nome Arte</th>
+			  </tr>
+		</thead>
+		<tbody>
+			<tr th:each="fotografo : ${fotografi}">
+			    <td th:text="${fotografo.nome}"></td>
+			    <td th:text="${fotografo.cognome}"></td>
+			    <td th:text="${fotografo.nomeArte}"></td>
+		  	</tr>
+		</tbody>
+	</table> 
+</body>
+</html>

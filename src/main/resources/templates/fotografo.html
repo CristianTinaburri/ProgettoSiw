@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Fotografo</h4>
+		<div>
+		Nome: <span th:text="${fotografo.nome}"></span>
+		</div>
+		<div>
+		Cognome: <span th:text="${fotografo.cognome}"></span>
+		</div>
+		Nome d'arte: <span th:text="${fotografo.nomeArte}"></span>
+		</div>
+		<a th:href="@{/fotografo}"> <button type="button">Torna alla lista</button></a>
+		<a th:href="@{/homepage}"> <button type="button">Torna all'homepage</button></a>
+	</div>	
+</body>
+</html>
