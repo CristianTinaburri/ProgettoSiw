@@ -43,7 +43,7 @@ public class FotografoController {
 	
 	@RequestMapping("/fotografiAdmin")
 	public String fotografoList(Model model) {
-		model.addAttribute("fotografo", new Fotografo());
+		model.addAttribute("fotografi", this.fotografoService.tuttiFotografi());
 	    return "/fotografiListAdmin";
 	}
 	

@@ -25,24 +25,6 @@ public class ViewController {
 	
 	@Autowired
 	FotoService fotoService;
-		
-	@RequestMapping("/index")
-	public void dbInserter(HttpSession session) {
-		Fotografo ft1 = new Fotografo("Marcello", "Ponzi","marciodentro");
-		Fotografo ft2 = new Fotografo("Francesco", "Zaccari","Uchebo Er Zaccoh");
-		this.fotografoService.inserisciFotografo(ft1);
-		this.fotografoService.inserisciFotografo(ft2);
-		
-		Album alb1 = new Album("Marcello", "Ponzi","marciodentro");
-		Album alb2 = new Album("Francesco", "Zaccari","Uchebo Er Zaccoh");
-		this.albumService.inserisciAlbum(alb1);
-		this.albumService.inserisciAlbum(alb2);
-		
-		Foto foto1 = new Foto("Marcello", "Ponzi","marciodentro","test");
-		Foto foto2 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","test");
-		this.fotoService.inserisciFoto(foto1);
-		this.fotoService.inserisciFoto(foto2);
-	}
 	
 	@RequestMapping("/login")
     public String login(Model model,HttpSession session) {
@@ -55,5 +37,9 @@ public class ViewController {
 	@RequestMapping("/logout")
     public String logout(Model model,HttpSession session) {
 		return "/index";
+	}
+	@RequestMapping("/richiesta")
+    public String richiesta(Model model,HttpSession session) {
+		return "/richiesta";
 	}
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.project.model.Album;
 import it.uniroma3.siw.project.model.Foto;
@@ -41,6 +42,11 @@ public class FotoController {
 	    return "/fotoListAdmin";
 	}
 	*/
+	@RequestMapping(value="/richiestaFoto", method = RequestMethod.GET)
+	public String sceltaFoto(@Valid @RequestParam("titoloFoto") String titoloFoto, Model model) {
+		model.addAttribute("titoloFoto", titoloFoto);
+	    return "/richiesta";
+	}
 	@RequestMapping(value = "/foto", method = RequestMethod.POST)
     public String newFoto(@Valid @ModelAttribute("foto") Foto foto, 
     									Model model, BindingResult bindingResult) {
@@ -69,7 +75,7 @@ public class FotoController {
 	
 	@RequestMapping(value = "/foto", method = RequestMethod.GET)
     public String showfotos(@Valid @ModelAttribute("foto") Foto foto, Model model) {
-		model.addAttribute("foto", this.fotoService.tuttiFoto());
+		model.addAttribute("fotos", this.fotoService.tuttiFoto());
         return "/fotoList";
 	}
 	

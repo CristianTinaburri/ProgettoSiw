@@ -38,7 +38,7 @@ public class AlbumController {
 	}*/
 	
 	
-	@RequestMapping(value = "/albumAdmin", method = RequestMethod.GET)
+	@RequestMapping(value = "/albumAdmin")
     public String showAlbumsAdmin(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
         return "/albumListAdmin";
@@ -47,7 +47,7 @@ public class AlbumController {
 	@RequestMapping(value = "/album", method = RequestMethod.GET)
     public String showAlbums(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
-        return "albumList.html";
+        return "/albumList";
 	}
 	/*
 	

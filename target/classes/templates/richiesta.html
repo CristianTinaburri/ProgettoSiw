@@ -33,9 +33,25 @@
 		  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
 		  	<li><a th:href="@{/album}">Album</a></li>
 		  	<li><a th:href="@{/foto}">Foto</a></li>
-		  	<li><a th:href="@{/richiesta}">Richiesta</a></li>
 	     </ul>
 	  </div>
-	</nav>			
+	</nav>
+	
+	<h1 style="text-align:center;">Richiedi l'utilizzo delle foto qui:</h1>
+	
+	 <form th:action="@{/invioRichiestaFoto}" method="POST" class="form">
+	   <div class="container form-group">
+		   <label for="nome">Nominativo: </label>
+		   <input class="form-control" type="text" id="nome" name="nome" placeholder="" autofocus required><br/>
+		   <label for="lname">Email: </label>
+		   <input class="form-control" type="email" id="email" name="email" placeholder="" required><br/>
+		   <label for="foto">Foto: </label>
+		   <input class="form-control" type="foto" id="foto" name="foto" placeholder="" th:value="${titoloFoto}" disabled><br/>
+		   <label for="messaggio">Messaggio: </label>
+		   <textarea class="form-control" id="messaggio" name="messaggio" placeholder="" style="height:200px" required></textarea><br/>
+		   <input type="submit" value="Invia" class="btn btn-primary btn-block">
+	   </div>)
+	</form>
+	 
 </body>
 </html>
