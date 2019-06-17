@@ -27,20 +27,22 @@ public class FotoController {
 	@Autowired
 	FotoValidator fotoValidator;
 	
+	
+	
 	@RequestMapping("/addFoto")
 	public String addFoto(Model model) {
 		model.addAttribute("foto", new Foto());
 	    return "/fotoForm";
 	    }
-	
+	/*
 	@RequestMapping("/fotoAdmin")
-	public String fotografoList(Model model) {
-		model.addAttribute("foto", new Fotografo());
+	public String fotoList(Model model) {
+		model.addAttribute("foto", new Foto());
 	    return "/fotoListAdmin";
 	}
-	
+	*/
 	@RequestMapping(value = "/foto", method = RequestMethod.POST)
-    public String newAllievo(@Valid @ModelAttribute("foto") Foto foto, 
+    public String newFoto(@Valid @ModelAttribute("foto") Foto foto, 
     									Model model, BindingResult bindingResult) {
 		this.fotoValidator.validate(foto, bindingResult);
 		 if (this.fotoService.esistente(foto)) {
@@ -58,10 +60,16 @@ public class FotoController {
 	        return "/fotoForm";
 	}
 		
+
+	@RequestMapping(value = "/fotoAdmin", method = RequestMethod.GET)
+    public String showfotosAdmin(@Valid @ModelAttribute("foto") Foto foto, Model model) {
+		model.addAttribute("foto", this.fotoService.tuttiFoto());
+        return "/fotoListAdmin";
+	}
 	
 	@RequestMapping(value = "/foto", method = RequestMethod.GET)
     public String showfotos(@Valid @ModelAttribute("foto") Foto foto, Model model) {
-		model.addAttribute("fotografi", this.fotoService.tuttiFoto());
+		model.addAttribute("foto", this.fotoService.tuttiFoto());
         return "/fotoList";
 	}
 	

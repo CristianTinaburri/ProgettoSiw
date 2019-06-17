@@ -3,6 +3,7 @@ package it.uniroma3.siw.project.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +16,7 @@ import it.uniroma3.siw.project.model.Album;
 import it.uniroma3.siw.project.model.Fotografo;
 import it.uniroma3.siw.project.service.AlbumService;
 
+@Controller
 public class AlbumController {
 	
 	@Autowired
@@ -28,27 +30,33 @@ public class AlbumController {
 		model.addAttribute("album", new Album());
 	    return "/albumForm";
 	   }
-	
+	/*
 	@RequestMapping("/albumAdmin")
-	public String fotografoList(Model model) {
-		model.addAttribute("album", new Album());
+	public String albumList(Model model) {
+		model.addAttribute("albums", new Album());
 	    return "/albumListAdmin";
-	}
+	}*/
 	
+	
+	@RequestMapping(value = "/albumAdmin", method = RequestMethod.GET)
+    public String showAlbumsAdmin(@Valid @ModelAttribute("album") Album album, Model model) {
+		model.addAttribute("albums", this.albumService.tuttiAlbum());
+        return "/albumListAdmin";
+	}
 	
 	@RequestMapping(value = "/album", method = RequestMethod.GET)
-    public String showFotografi(@Valid @ModelAttribute("fotografo") Fotografo fotografo, Model model) {
+    public String showAlbums(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
-        return "/albumList";
+        return "albumList.html";
 	}
-	
+	/*
 	
 	@RequestMapping(value = "/listaAlbum")
     public String showAlbums(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
         return "/albumList";
 	}
-	
+	*/
 	@RequestMapping(value = "/album", method = RequestMethod.POST)
     public String newAlbum(@Valid @ModelAttribute("album") Album album, 
     									Model model, BindingResult bindingResult) {
