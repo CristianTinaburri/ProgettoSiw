@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Foto</h4>
+		<div>
+		Titolo Foto: <span th:text="${foto.titoloFoto}"></span>
+		</div>
+		<div>
+		Titolo Album: <span th:text="${foto.titoloAlbum}"></span>
+		</div>
+		<div>
+		Fotografo: <span th:text="${foto.fotografo}"></span>
+		</div>
+		<div>
+		Uri: <span th:text="${foto.uri"></span>
+		</div>
+		<a th:href="@{/fotografo}"> <button type="button">Torna alla lista</button></a>
+		<a th:href="@{/homepage}"> <button type="button">Torna all'homepage</button></a>
+	</div>	
+</body>
+</html>
