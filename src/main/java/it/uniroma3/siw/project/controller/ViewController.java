@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.uniroma3.siw.project.model.Album;
-import it.uniroma3.siw.project.model.Foto;
-import it.uniroma3.siw.project.model.Fotografo;
 import it.uniroma3.siw.project.service.AlbumService;
 import it.uniroma3.siw.project.service.FotoService;
 import it.uniroma3.siw.project.service.FotografoService;
@@ -26,6 +23,10 @@ public class ViewController {
 	@Autowired
 	FotoService fotoService;
 	
+	@RequestMapping("/index")
+    public String index(Model model,HttpSession session) {
+		return "/index";
+	}
 	@RequestMapping("/login")
     public String login(Model model,HttpSession session) {
 		return "/login";

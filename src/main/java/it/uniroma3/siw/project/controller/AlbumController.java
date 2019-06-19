@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.project.controller.validator.AlbumValidator;
 import it.uniroma3.siw.project.model.Album;
-import it.uniroma3.siw.project.model.Fotografo;
 import it.uniroma3.siw.project.service.AlbumService;
 
 @Controller

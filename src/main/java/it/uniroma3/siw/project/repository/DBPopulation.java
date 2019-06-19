@@ -46,15 +46,19 @@ public class DBPopulation implements ApplicationRunner{
 	}
 	
 	private void addAll() {
-		Fotografo ft1 = new Fotografo("Marcello", "Ponzi","marciodentro");
-		Fotografo ft2 = new Fotografo("Francesco", "Zaccari","Uchebo Er Zaccoh");
+		Fotografo ft1 = new Fotografo("Cristian", "Tinaburri", "CriTin");
+		Fotografo ft2 = new Fotografo("Giorgia", "Nesci", "GioNes");
+		Fotografo ft3 = new Fotografo("Massimiliano", "Patrizi", "MasPat");
 		this.fotografoService.inserisciFotografo(ft1);
 		this.fotografoService.inserisciFotografo(ft2);
+		this.fotografoService.inserisciFotografo(ft3);
 		
-		Album alb1 = new Album("Marcello", "Ponzi","marciodentro");
-		Album alb2 = new Album("Francesco", "Zaccari","Uchebo Er Zaccoh");
+		Album alb1 = new Album("Album CT", "CriTin", "Oggi");
+		Album alb2 = new Album("Album GN", "GioNes", "Domani");
+		Album alb3 = new Album("Album MP", "MasPat", "Ieri");
 		this.albumService.inserisciAlbum(alb1);
 		this.albumService.inserisciAlbum(alb2);
+		this.albumService.inserisciAlbum(alb3);
 		
 		Richieste r1 = new Richieste("Marcello", "Ponzi","marciodentro", "asd");
 		Richieste r2 = new Richieste("asd", "asd","marciodentro", "asd");
@@ -63,14 +67,14 @@ public class DBPopulation implements ApplicationRunner{
 		this.richiestaService.inserisciRichieste(r2);
 		this.richiestaService.inserisciRichieste(r3);
 		
-		Foto foto1 = new Foto("Marcello", "Ponzi","marciodentro","https://picsum.photos/200?random=1");
-		Foto foto2 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","https://picsum.photos/200?random=2");
-		Foto foto3 = new Foto("Marcello", "Ponzi","marciodentro","https://picsum.photos/200?random=3");
-		Foto foto4 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","https://picsum.photos/200?random=4");
-		Foto foto5 = new Foto("Marcello", "Ponzi","marciodentro","https://picsum.photos/200?random=5");
-		Foto foto6 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","https://picsum.photos/200?random=6");
-		Foto foto7 = new Foto("Marcello", "Ponzi","marciodentro","https://picsum.photos/200?random=7");
-		Foto foto8 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","https://picsum.photos/200?random=8");
+		Foto foto1 = new Foto("Foto 1", "Album CT","CriTin","https://picsum.photos/200?random=1");
+		Foto foto2 = new Foto("Foto 2", "Album CT","CriTin","https://picsum.photos/200?random=2");
+		Foto foto3 = new Foto("Foto 3", "Album CT","CriTin","https://picsum.photos/200?random=3");
+		Foto foto4 = new Foto("Foto 4", "Album GN","GioNes","https://picsum.photos/200?random=4");
+		Foto foto5 = new Foto("Foto 5", "Album GN","GioNes","https://picsum.photos/200?random=5");
+		Foto foto6 = new Foto("Foto 6", "Album GN","GioNes","https://picsum.photos/200?random=6");
+		Foto foto7 = new Foto("Foto 7", "Album MP","MasPat","https://picsum.photos/200?random=7");
+		Foto foto8 = new Foto("Foto 8", "Album MP","MasPat","https://picsum.photos/200?random=8");
 		this.fotoService.inserisciFoto(foto1);
 		this.fotoService.inserisciFoto(foto2);
 		this.fotoService.inserisciFoto(foto3);

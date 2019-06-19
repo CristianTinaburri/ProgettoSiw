@@ -31,17 +31,17 @@ public class FotoService{
 	}
 	
 	@Transactional
-	public Foto fotoPerTitoloAlbum(String titoloAlbum){
+	public List<Foto> fotoPerTitoloAlbum(String titoloAlbum){
 		return this.fotoRepository.findByTitoloAlbum(titoloAlbum);
 	}
 	
 	@Transactional
-	public Foto fotoPerFotografo(String fotografo){
+	public List<Foto> fotoPerFotografo(String fotografo){
 		return this.fotoRepository.findByFotografo(fotografo);
 	}
 	
 	public boolean esistente(Foto foto) {
-		Foto foto1 = this.fotoRepository.findByTitoloAlbum(foto.getTitoloAlbum());
+		Foto foto1 = this.fotoRepository.findByTitoloFoto(foto.getTitoloFoto());
 		if (foto1!=null)
 			return true;
 		else 

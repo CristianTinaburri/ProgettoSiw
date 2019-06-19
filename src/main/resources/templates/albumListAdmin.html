@@ -34,7 +34,7 @@
 		<ul>
 			<li th:each="album : ${albums}"> 
 				<a
-				th:href="@{'album' + '/' + ${album.titoloAlbum}}"
+				th:href="@{'/fotoAlbumAdmin' + '/' + ${album.titoloAlbum}}"
 				th:text="${album.titoloAlbum}"> </a>
 			</li>
 		</ul>

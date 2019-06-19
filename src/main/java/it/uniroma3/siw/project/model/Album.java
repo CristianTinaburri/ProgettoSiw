@@ -17,6 +17,7 @@ public class Album {
 	private String autore;
 	private String data;
 	
+	
 	public Album() {
 		
 	}

@@ -1,6 +1,5 @@
 package it.uniroma3.siw.project.controller;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import it.uniroma3.siw.project.model.Album;
-import it.uniroma3.siw.project.model.Foto;
 import it.uniroma3.siw.project.model.Richieste;
-import it.uniroma3.siw.project.service.AlbumService;
-import it.uniroma3.siw.project.service.FotoService;
-import it.uniroma3.siw.project.service.RichiestaService;
 import it.uniroma3.siw.project.service.RichiestaService;
 
 @Controller

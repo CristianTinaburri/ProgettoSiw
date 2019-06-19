@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import it.uniroma3.siw.project.model.Album;
 import it.uniroma3.siw.project.model.Fotografo;
 import it.uniroma3.siw.project.service.AlbumService;
 import it.uniroma3.siw.project.service.FotografoService;
