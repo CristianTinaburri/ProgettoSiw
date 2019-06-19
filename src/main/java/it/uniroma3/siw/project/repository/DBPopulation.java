@@ -8,9 +8,11 @@ import org.springframework.stereotype.Component;
 import it.uniroma3.siw.project.model.Album;
 import it.uniroma3.siw.project.model.Foto;
 import it.uniroma3.siw.project.model.Fotografo;
+import it.uniroma3.siw.project.model.Richieste;
 import it.uniroma3.siw.project.service.AlbumService;
 import it.uniroma3.siw.project.service.FotoService;
 import it.uniroma3.siw.project.service.FotografoService;
+import it.uniroma3.siw.project.service.RichiestaService;
 
 @Component
 public class DBPopulation implements ApplicationRunner{
@@ -29,6 +31,9 @@ public class DBPopulation implements ApplicationRunner{
 	
 	@Autowired
 	public AlbumRepository albumRepository;
+	
+	@Autowired
+	public RichiestaService richiestaService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -50,6 +55,13 @@ public class DBPopulation implements ApplicationRunner{
 		Album alb2 = new Album("Francesco", "Zaccari","Uchebo Er Zaccoh");
 		this.albumService.inserisciAlbum(alb1);
 		this.albumService.inserisciAlbum(alb2);
+		
+		Richieste r1 = new Richieste("Marcello", "Ponzi","marciodentro", "asd");
+		Richieste r2 = new Richieste("asd", "asd","marciodentro", "asd");
+		Richieste r3 = new Richieste("asd", "Ponzi","sdsd", "asd");
+		this.richiestaService.inserisciRichieste(r1);
+		this.richiestaService.inserisciRichieste(r2);
+		this.richiestaService.inserisciRichieste(r3);
 		
 		Foto foto1 = new Foto("Marcello", "Ponzi","marciodentro","https://picsum.photos/200?random=1");
 		Foto foto2 = new Foto("Francesco", "Zaccari","Uchebo Er Zaccoh","https://picsum.photos/200?random=2");

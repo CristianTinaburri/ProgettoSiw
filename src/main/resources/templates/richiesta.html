@@ -39,18 +39,24 @@
 	
 	<h1 style="text-align:center;">Richiedi l'utilizzo delle foto qui:</h1>
 	
+		th:object="${richieste}"
+		th:field="*{nominativo}"
+		th:field="*{email}"
+		th:field="*{titoloFoto}"
+		th:field="*{messaggio}"
+	
 	 <form th:action="@{/invioRichiestaFoto}" method="POST" class="form">
 	   <div class="container form-group">
 		   <label for="nome">Nominativo: </label>
-		   <input class="form-control" type="text" id="nome" name="nome" placeholder="" autofocus required><br/>
+		   <input class="form-control" type="text"  id="nome" name="nome" placeholder="" autofocus required /><br/>
 		   <label for="lname">Email: </label>
-		   <input class="form-control" type="email" id="email" name="email" placeholder="" required><br/>
+		   <input class="form-control" type="email"  id="email" name="email" placeholder="" required /><br/>
 		   <label for="foto">Foto: </label>
-		   <input class="form-control" type="foto" id="foto" name="foto" placeholder="" th:value="${titoloFoto}" disabled><br/>
+		   <input class="form-control" type="text" id="foto" name="foto" placeholder="" th:value="${titoloFoto}" disabled /><br/>
 		   <label for="messaggio">Messaggio: </label>
-		   <textarea class="form-control" id="messaggio" name="messaggio" placeholder="" style="height:200px" required></textarea><br/>
+		   <input class="form-control" id="messaggio" name="messaggio" placeholder="" style="height:200px" required ><br/>
 		   <input type="submit" value="Invia" class="btn btn-primary btn-block">
-	   </div>)
+	   </div>
 	</form>
 	 
 </body>

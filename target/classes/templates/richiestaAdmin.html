@@ -35,10 +35,30 @@
 	  </div>
 	</nav>
 
-	<br/><br/>
+	<br/>
+
+	<h1 style="text-align:center;">Richieste</h1>
 	
-	<h1 style="text-align:center;">Pagina Admin</h1><br/>
-	<p style="text-align: center;">Qui puoi aggiungere foto, album e fotografi. Scegli l' azione che preferisci.</p>
+	<br/><br/>
+
+	<table class="table table-bordered">
+		<thead>
+			  <tr>
+				    <th scope="col">Nominativo</th>
+				    <th scope="col">Email</th>
+				    <th scope="col">Foto</th>
+				    <th scope="col">Messaggio</th>
+			  </tr>
+		</thead>
+		<tbody>
+			<tr th:each="richiesta : ${richieste}">
+			    <td th:text="${richiesta.nominativo}"></td>
+			    <td th:text="${richiesta.email}"></td>
+			    <td th:text="${richiesta.titoloFoto}"></td>
+			    <td th:text="${richiesta.messaggio}"></td>
+		  	</tr>
+		</tbody>
+	</table>
 
 </body>
 </html>

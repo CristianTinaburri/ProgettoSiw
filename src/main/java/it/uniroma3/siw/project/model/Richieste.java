@@ -13,31 +13,46 @@ public class Richieste {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String nome;
-	private String cognome;
-	@ManyToMany
-	private List<Foto> listaFoto;
+	private String nominativo;
+	private String email;
+	private String titoloFoto;
+	private String messaggio;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCognome() {
-		return cognome;
-	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
+	public Richieste() {
+		
 	}
 	
+	public Richieste(String nominativo, String email, String titoloFoto, String messaggio) {
+		super();
+		this.nominativo = nominativo;
+		this.email = email;
+		this.titoloFoto = titoloFoto;
+		this.messaggio = messaggio;
+	}
 	
-	
-	
+	public String getNominativo() {
+		return nominativo;
+	}
+	public void setNominativo(String nominativo) {
+		this.nominativo = nominativo;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getFoto() {
+		return titoloFoto;
+	}
+	public void setFoto(String titoloFoto) {
+		this.titoloFoto = titoloFoto;
+	}
+	public String getMessaggio() {
+		return messaggio;
+	}
+	public void setMessaggio(String messaggio) {
+		this.messaggio = messaggio;
+	}
+		
 }
