@@ -23,7 +23,7 @@ public class RichiestaController {
 	public String newAllievo(@Valid @ModelAttribute("richiesta") Richieste richiesta, Model model, BindingResult bindingResult) {
 	    if (this.richiestaService.esistente(richiesta)) {
 	        model.addAttribute("exists", "Il richiesta già esiste");
-	        return "richiestaForm";
+	        return "/index";
 	    } else {
 	        if (!bindingResult.hasErrors()) {
 	            this.richiestaService.inserisciRichieste(richiesta);
@@ -38,6 +38,6 @@ public class RichiestaController {
     public String richiestaAdmin(Model model, @Valid @ModelAttribute("richieste") Richieste richieste) {
 		model.addAttribute("richieste", richiestaService.tuttiRichieste());
 		return "/richiestaAdmin";
-	}	
+	} //  new ArrayList<Richieste>()
 
 }

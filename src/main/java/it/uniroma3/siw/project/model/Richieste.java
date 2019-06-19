@@ -15,9 +15,6 @@ public class Richieste {
 	private String titoloFoto;
 	private String messaggio;
 	
-	public Richieste() {
-		
-	}
 	
 	public Richieste(String nominativo, String email, String titoloFoto, String messaggio) {
 		super();

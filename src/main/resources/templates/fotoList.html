@@ -3,28 +3,7 @@
 	xmlns="http://www.w3.org/1999/html">
 <body>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-	<!------ Include the above in your HEAD tag ---------->
-
-	<nav class="navbar navbar-default">
-	   <div class="container-fluid">
-	     <div class="navbar-header">
-	      <a class="navbar-brand" href="#">SILPH</a>
-	     </div>
-	    <ul class="nav navbar-nav">
-	        <li class="active"><a th:href="@{/index}">Home</a></li>
-	       	<li><a th:href="@{/login}">Login</a></li>
-		  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
-		  	<li><a th:href="@{/album}">Album</a></li>
-		  	<li><a th:href="@{/foto}">Foto</a></li>
-	     </ul>
-	  </div>
-	</nav>
+	<div th:insert="~{navbar :: navbarClient}"></div>
 
 	<h2 style="text-align:center;">Foto</h2>
 
@@ -44,20 +23,7 @@
 			</div>
 		</div>
 	</div>
-	
-	<!-- 
-	<div>
-		<h2 style="text-align:center;">Foto</h2>
-		<ul>
-			<li th:each="foto : ${fotos}"> 
-				<a
-				th:href="@{'foto' + '/' + ${foto.titoloFoto}}"
-				th:text="${foto.titoloFoto}"> </a>
-			</li>
-		</ul>
-	</div>
-	 -->
-	
+		
 	<!-- Non andrebbe fatto per buona prassi, ma dato lo scope piccolo  del progetto
 		 aggiungo una classe di stile interna alla pagina html-->
 	<style>
