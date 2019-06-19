@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pagina iniziale</title>
+<meta charset="utf-8" />
+		
+</head>
+<body>
+<div>
+	<!-- 
+	<h1 class="title" ><font color="Black" size="20">Benvenuto nel portale di SILPH SPA </font></h1>
+		<p th:text="${exists}"></p>
+	</div> 
+	-->
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+	<!------ Include the above in your HEAD tag ---------->
+	
+	<nav class="navbar navbar-default">
+	   <div class="container-fluid">
+	     <div class="navbar-header">
+	      <a class="navbar-brand" href="#">SILPH</a>
+	     </div>
+	    <ul class="nav navbar-nav">
+	        <li class="active"><a th:href="@{/index}">Home</a></li>
+	       	<li><a th:href="@{/login}">Login</a></li>
+		  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
+		  	<li><a th:href="@{/album}">Album</a></li>
+		  	<li><a th:href="@{/foto}">Foto</a></li>
+	     </ul>
+	  </div>
+	</nav>
+	
+	<h1 style="text-align:center;">Richiedi l'utilizzo delle foto qui:</h1>
+	
+		th:object="${richieste}"
+		th:field="*{nominativo}"
+		th:field="*{email}"
+		th:field="*{titoloFoto}"
+		th:field="*{messaggio}"
+	
+	 <form th:action="@{/invioRichiestaFoto}" method="POST" class="form">
+	   <div class="container form-group">
+		   <label for="nome">Nominativo: </label>
+		   <input class="form-control" type="text"  id="nome" name="nome" placeholder="" autofocus required /><br/>
+		   <label for="lname">Email: </label>
+		   <input class="form-control" type="email"  id="email" name="email" placeholder="" required /><br/>
+		   <label for="foto">Foto: </label>
+		   <input class="form-control" type="text" id="foto" name="foto" placeholder="" th:value="${titoloFoto}" disabled /><br/>
+		   <label for="messaggio">Messaggio: </label>
+		   <input class="form-control" id="messaggio" name="messaggio" placeholder="" style="height:200px" required ><br/>
+		   <input type="submit" value="Invia" class="btn btn-primary btn-block">
+	   </div>
+	</form>
+	 
+</body>
+</html>

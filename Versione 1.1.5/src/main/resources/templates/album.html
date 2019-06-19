@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Album</h4>
+		<div>
+			Titolo: <span th:text="${album.titoloAlbum}"></span>
+		</div>
+		<div>
+			Autore: <span th:text="${album.autore}"></span>
+		</div>
+			Data pubblicazione: <span th:text="${album.data}"></span>
+	</div>
+	<a th:href="@{/albumList}">
+		<button type="button">Torna alla lista</button>
+	</a>
+	<a th:href="@{/homepage}">
+		<button type="button">Torna all'homepage</button>
+	</a>
+
+</body>
+</html>
