@@ -18,18 +18,20 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 		<!------ Include the above in your HEAD tag ---------->
 		
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-inverse">
 		   <div class="container-fluid">
 		     <div class="navbar-header">
-		      <a class="navbar-brand" th:href="@{/index}">SILPH</a>
+		      <a style="color:white;" class="navbar-brand" th:href="@{/index}">SILPH</a>
 		     </div>
 		    <ul class="nav navbar-nav">
-		        <li><a th:href="@{/index}">Home</a></li>
-		       	<li><a th:href="@{/login}">Login</a></li>
-			  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
-			  	<li><a th:href="@{/album}">Album</a></li>
-			  	<li><a th:href="@{/foto}">Foto</a></li>
+		        <li><a style="color:white;" th:href="@{/index}">Home</a></li>
+			  	<li><a style="color:white;" th:href="@{/fotografo}">Fotografi</a></li>
+			  	<li><a style="color:white;" th:href="@{/album}">Album</a></li>
+			  	<li><a style="color:white;" th:href="@{/foto}">Foto</a></li>
 		     </ul>
+		     <ul class="nav navbar-nav pull-right">
+		      	<li><a style="color:white;" th:href="@{/login}">Login</a></li>
+		      </ul>
 		  </div>
 		</nav>		
     </div>
@@ -43,21 +45,23 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 		<!------ Include the above in your HEAD tag ---------->
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-inverse">
 		   <div class="container-fluid">
 		      <div class="navbar-header">
-		         <a class="navbar-brand" th:href="@{/adminDashboard}">SILPH</a>
+		         <a style="color:white;" class="navbar-brand" th:href="@{/adminDashboard}">SILPH</a>
 		      </div>
 		      <ul class="nav navbar-nav">
-		         <li><a th:href="@{/adminDashboard}">Dashboard</a></li>
-		         <li><a th:href="@{/addFotografo}">Aggiungi Fotografo</a></li>
-		         <li><a th:href="@{/addAlbum}">Aggiungi Album</a></li>
-		         <li><a th:href="@{/addFoto}">Aggiungi Foto</a></li>
-		         <li><a th:href="@{/fotografiAdmin}">Fotografi</a></li>
-		         <li><a th:href="@{/albumAdmin}">Album</a></li>
-		         <li><a th:href="@{/fotoAdmin}">Foto</a></li>
-		         <li><a th:href="@{/richiestaAdmin}">Richieste</a></li>
-		         <li><a th:href="@{/logout}">Logout</a></li>
+		         <li><a style="color:white;" th:href="@{/adminDashboard}">Dashboard</a></li>
+		         <li><a style="color:white;" th:href="@{/addFotografo}">Aggiungi Fotografo</a></li>
+		         <li><a style="color:white;" th:href="@{/addAlbum}">Aggiungi Album</a></li>
+		         <li><a style="color:white;" th:href="@{/addFoto}">Aggiungi Foto</a></li>
+		         <li><a style="color:white;" th:href="@{/fotografiAdmin}">Fotografi</a></li>
+		         <li><a style="color:white;" th:href="@{/albumAdmin}">Album</a></li>
+		         <li><a style="color:white;" th:href="@{/fotoAdmin}">Foto</a></li>
+		         <li><a style="color:white;" th:href="@{/richiestaAdmin}">Richieste</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav pull-right">
+		      	<li><a style="color:white;" th:href="@{/logout}">Logout</a></li>
 		      </ul>
 		   </div>
 		</nav>

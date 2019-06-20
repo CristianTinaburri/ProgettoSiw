@@ -8,17 +8,18 @@
 	<div>
 		<h2 style="text-align:center;">Foto</h2>
 		<div class="wrapper">
-		<div th:each="foto: ${fotos}">
-			<div class="thumbnail" style="margin-top: 20px; text-align:center;">
-				  <img class="card-img-top" th:src="${foto.uri}" alt="Card image cap">
-				  <div class="caption" style="text-align:center;">
-				  		<form th:action="@{/richiestaFoto}" method="GET">
-						    <h5 class="card-title" th:text="${foto.titoloFoto}"></h5>
-						    <p>Fotografo: <span th:text="${foto.fotografo}"></span></p>
-						    <p>Album: <span th:text="${foto.titoloAlbum}"></p>
-						    <input th:value="${foto.titoloFoto}" name="titoloFoto" hidden>
-					    </form>
-				  </div>
+			<div th:each="foto: ${fotos}">
+				<div class="thumbnail" style="margin-top: 20px; text-align:center;">
+					  <img class="card-img-top" th:src="${foto.uri}" alt="Card image cap">
+					  <div class="caption" style="text-align:center;">
+					  		<form th:action="@{/richiestaFoto}" method="POST">
+							    <h5 class="card-title" th:text="${foto.titoloFoto}"></h5>
+							    <p>Fotografo: <span th:text="${foto.fotografo}"></span></p>
+							    <p>Album: <span th:text="${foto.titoloAlbum}"></span></p>
+							    <input th:value="${foto.titoloFoto}" name="titoloFoto" hidden>
+						    </form>
+					  </div>
+				</div>
 			</div>
 		</div>
 	</div>
