@@ -68,7 +68,7 @@ public class AlbumController {
 	            if (!bindingResult.hasErrors()) {
 	                this.albumService.inserisciAlbum(album);
 	                model.addAttribute("albums", this.albumService.tuttiAlbum());
-	                return "/albumList";
+	                return "/albumListAdmin";
 	            }
 	        }
 	        return "/albumForm";

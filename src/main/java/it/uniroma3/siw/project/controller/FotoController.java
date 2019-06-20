@@ -69,7 +69,7 @@ public class FotoController {
 	            if (!bindingResult.hasErrors()) {
 	                this.fotoService.inserisciFoto(foto);
 	                model.addAttribute("foto", this.fotoService.tuttiFoto());
-	                return "/fotoList";
+	                return "/fotoListAdmin";
 	            }
 	        }
 	        return "/fotoForm";

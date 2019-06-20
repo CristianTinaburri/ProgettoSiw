@@ -21,6 +21,12 @@ public class RichiestaService {
 	}
 	
 	@Transactional
+	public void cancellaRichiesta(Richiesta richiesta) {
+		richiesteRepository.delete(richiesta);
+	}
+	
+	
+	@Transactional
 	public List<Richiesta> tuttiRichieste(){
 		return (List<Richiesta>)richiesteRepository.findAll();
 	}
@@ -36,5 +42,5 @@ public class RichiestaService {
 			return true;
 		else 
 			return false;
-	}	
+	}
 }

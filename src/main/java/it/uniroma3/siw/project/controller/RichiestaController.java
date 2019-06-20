@@ -21,7 +21,7 @@ public class RichiestaController {
 	
 	@RequestMapping(value = "/invioRichiestaFoto", method = RequestMethod.POST)
 	public String newRichiesta( @Valid @ModelAttribute("nominativo") String nominativo,
-								@Valid @ModelAttribute(value="email") String email,
+								@Valid @ModelAttribute("email") String email,
 								@Valid @ModelAttribute("titoloFoto") String titoloFoto,
 								@Valid @ModelAttribute("messaggio") String messaggio,
 								Model model, 
@@ -39,5 +39,23 @@ public class RichiestaController {
         model.addAttribute("richieste", this.richiestaService.tuttiRichieste()); // this.richiestaService.tuttiRichieste()
 		return "/richiestaAdmin";
 	}
+	
+	/*
+	 *  @RequestMapping(value = "/accettaRichiesta", method = RequestMethod.POST)
+	    public String accettaRichiesta(@Valid @ModelAttribute("id") Long id, Model model) {
+			Richiesta richiesta = richiestaService.richiestaPerNominativo(id); 
+			if (richiesta!=null)
+				richiestaService.cancellaRichiesta(richiesta);
+			return "/richiestaAdmin";
+		}
+		
+		@RequestMapping(value = "/deleteRichiesta", method = RequestMethod.POST)
+	    public String deleteRichiesta(@Valid @ModelAttribute("nominativo") String nominativo, Model model) {
+			Richiesta richiesta = richiestaService.richiestaPerNominativo(nominativo); 
+			if (richiesta!=null)
+				richiestaService.cancellaRichiesta(richiesta);
+			return "/richiestaAdmin";
+		}
+	 * */
 
 }

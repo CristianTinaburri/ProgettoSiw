@@ -7,46 +7,19 @@
 		
 </head>
 <body>
-<div>
-	<!-- 
-	<h1 class="title" ><font color="Black" size="20">Benvenuto nel portale di SILPH SPA </font></h1>
-		<p th:text="${exists}"></p>
-	</div> 
-	-->
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-	<!------ Include the above in your HEAD tag ---------->
-	
-	<nav class="navbar navbar-default">
-	   <div class="container-fluid">
-	     <div class="navbar-header">
-	      <a class="navbar-brand" href="#">SILPH</a>
-	     </div>
-	    <ul class="nav navbar-nav">
-	        <li class="active"><a th:href="@{/index}">Home</a></li>
-	       	<li><a th:href="@{/login}">Login</a></li>
-		  	<li><a th:href="@{/fotografo}">Fotografi</a></li>
-		  	<li><a th:href="@{/album}">Album</a></li>
-		  	<li><a th:href="@{/foto}">Foto</a></li>
-	     </ul>
-	  </div>
-	</nav>
+<div>	
+	<div th:insert="~{navbar :: navbarClient}"></div>
 	
 	<h1 style="text-align:center;">Richiedi l'utilizzo delle foto qui:</h1>
 	
 	 <form th:action="@{/invioRichiestaFoto}" method="POST" class="form">
 	   <div class="container form-group">
 		   <label for="nome">Nominativo: </label>
-		   <input class="form-control" type="text" th:value="${nominativo}" id="nome" name="nome" placeholder="" autofocus required /><br/>
+		   <input class="form-control" type="text" th:value="${nominativo}" id="nominativo" name="nominativo" placeholder="" autofocus required /><br/>
 		   <label for="lname">Email: </label>
 		   <input class="form-control" type="email" th:value="${email}" id="email" name="email" placeholder="" required /><br/>
 		   <label for="foto">Foto: </label>
-		   <input class="form-control" type="text" id="foto" th:value="${titoloFoto}" disabled /><br/>
+		   <input class="form-control" type="text" id="titoloFoto" name="titoloFoto" th:value="${titoloFoto}" readonly/><br/>
 		   <label for="messaggio">Messaggio: </label>
 		   <textarea class="form-control" id="messaggio" th:value="${messaggio}" name="messaggio" placeholder="" style="height:200px" required ></textarea><br/>
 		   <input type="submit" value="Invia" class="btn btn-primary btn-block">

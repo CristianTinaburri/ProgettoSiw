@@ -41,8 +41,8 @@ public class FotografoService {
 	}
 	
 	public boolean esistente(Fotografo fotografo) {
-		List<Fotografo> fotografi = this.fotografoRepository.findByNome(fotografo.getNome());
-		if (fotografi.size() > 0)
+		Fotografo fotografo1 = this.fotografoRepository.findByNomeArte(fotografo.getNomeArte());
+		if (fotografo1 != null)
 			return true;
 		else 
 			return false;

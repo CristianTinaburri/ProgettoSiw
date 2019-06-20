@@ -60,7 +60,7 @@ public class FotografoController {
 	            if (!bindingResult.hasErrors()) {
 	                this.fotografoService.inserisciFotografo(fotografo);
 	                model.addAttribute("fotografi", this.fotografoService.tuttiFotografi());
-	                return "/fotografiList";
+	                return "/fotografiListAdmin";
 	            }
 	        }
 	        return "/fotografoForm";

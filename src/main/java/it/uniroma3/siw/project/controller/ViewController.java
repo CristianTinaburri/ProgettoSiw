@@ -35,7 +35,7 @@ public class ViewController {
 	}
 	@RequestMapping("/admin")
     public String adminDashboard(@Valid @ModelAttribute("username") String username, 
-    					@Valid @ModelAttribute("username") String password, Model model,HttpSession session) {
+    					@Valid @ModelAttribute("password") String password, Model model,HttpSession session) {
 		if(username.equals("admin") && password.equals("admin")) {
 			return "/adminDashboard";
 		}else {
