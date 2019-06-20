@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>siw-project-2019-front-end-cris-gio</artifactId>
+	<artifactId>Progetto-SIW-2019</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>siw-project-2019</name>
 	<description>siw project</description>
