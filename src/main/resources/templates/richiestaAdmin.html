@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
-<title>Pagina iniziale</title>
+<title>Visualizza le richieste</title>
 <meta charset="utf-8" />
 </head>
 <body>
@@ -22,7 +22,7 @@
 				    <th scope="col" style="text-align:center;">Email</th>
 				    <th scope="col" style="text-align:center;">Foto</th>
 				    <th scope="col" style="text-align:center;">Messaggio</th>
-				    <!-- <th scope="col" style="text-align:center;">Visualizza</th> -->
+
 			  </tr>
 		</thead>
 		<tbody>
@@ -34,44 +34,6 @@
 		  	</tr>
 		</tbody>
 	</table>
-	
-	<!-- 
-	<td style="text-align: center;">
-			    	<div>
-			    		<form th:action="@{/accettaRichiesta}" method="POST">
-			    			<input th:value="${richiesta.id}" hidden="true" />
-			    			<button type="submit" class="btn btn-info">Accetta</button>
-			    		</form>
-			    		<form th:action="@{/deleteRichiesta}" method="POST">
-			    			<input th:value="${richiesta.id}" hidden="true" />
-			    			<button type="submit" class="btn btn-danger">X</button>
-			    		</form>
-			    	</div>
-			    </td>
-	 -->
-	
-	<!-- 
-	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Visualizza Richiesta</button>
-	<div style="text-align: left;" id="myModal" class="modal fade" role="dialog">
-	    <div class="modal-dialog">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                <h4 class="modal-title">Da: <span th:text="${richiesta.nominativo}"></span></h4>
-	            </div>
-	            <div class="modal-body">
-	                <p>Email: <span th:text="${richiesta.email}"></span></p>
-	                <p>Titolo Foto: <span th:text="${richiesta.titoloFoto}"></span></p>
-	                <p>Messaggio: </p>
-	                <p th:text="${richiesta.messaggio}"></p>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	-->
 
 </body>
 </html>

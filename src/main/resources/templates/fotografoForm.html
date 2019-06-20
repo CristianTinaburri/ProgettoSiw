@@ -5,7 +5,7 @@
 
 	<div th:insert="~{navbar :: navbarAdmin}"></div>
 
-	<h4 style="text-align:center;">Inserisci i dati di un fotografo</h4>
+	<h4 style="text-align:center;">Inserisci i dati del Fotografo che vuoi aggiungere.</h4>
 	<form th:action="@{/fotografo}" method="POST" th:object="${fotografo}" class="form">
 		<div class="container form-group">
 			Nome: <input type="text" th:field="*{nome}"  class="form-control" /><br/>
@@ -14,6 +14,6 @@
 			<button type="submit" class="btn btn-primary center-block btn-block" >Registra</button>
 		</div>
 	</form>
-	<!-- <a th:text="${exists}"></a> -->
+
 </body>
 </html>

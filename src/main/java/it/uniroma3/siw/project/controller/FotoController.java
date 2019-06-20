@@ -44,13 +44,7 @@ public class FotoController {
 		model.addAttribute("foto", new Foto());
 	    return "/fotoForm";
 	    }
-	/*
-	@RequestMapping("/fotoAdmin")
-	public String fotoList(Model model) {
-		model.addAttribute("foto", new Foto());
-	    return "/fotoListAdmin";
-	}
-	*/
+
 	@RequestMapping(value="/richiestaFoto", method = RequestMethod.GET)
 	public String sceltaFoto(@Valid @RequestParam("titoloFoto") String titoloFoto, Model model) {
 		model.addAttribute("titoloFoto", titoloFoto);
@@ -68,7 +62,7 @@ public class FotoController {
 		 else {
 	            if (!bindingResult.hasErrors()) {
 	                this.fotoService.inserisciFoto(foto);
-	                model.addAttribute("foto", this.fotoService.tuttiFoto());
+	                model.addAttribute("fotos", this.fotoService.tuttiFoto());
 	                return "/fotoListAdmin";
 	            }
 	        }
@@ -93,7 +87,5 @@ public class FotoController {
     public String getFoto(@PathVariable("titoloFoto") String titoloFoto, Model model) {
         model.addAttribute("foto", this.fotoService.fotoPerTitoloFoto(titoloFoto));
     	return "/foto";
-    }
-    
-    
+    }  
 }

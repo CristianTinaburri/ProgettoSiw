@@ -7,8 +7,6 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.project.model.Album;
 
-
-
 @Component
 public class AlbumValidator implements Validator {
 
@@ -23,5 +21,4 @@ public class AlbumValidator implements Validator {
     public boolean supports(Class<?> aClass) {
         return Album.class.equals(aClass);
     }
-
 }

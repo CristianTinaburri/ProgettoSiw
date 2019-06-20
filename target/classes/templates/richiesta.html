@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
-<title>Pagina iniziale</title>
+<title>Richiedi la tua foto</title>
 <meta charset="utf-8" />
 		
 </head>
@@ -10,7 +10,7 @@
 <div>	
 	<div th:insert="~{navbar :: navbarClient}"></div>
 	
-	<h1 style="text-align:center;">Richiedi l'utilizzo delle foto qui:</h1>
+	<h1 style="text-align:center;">Compila il modulo per richiedere la foto:</h1>
 	
 	 <form th:action="@{/invioRichiestaFoto}" method="POST" class="form">
 	   <div class="container form-group">

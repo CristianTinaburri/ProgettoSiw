@@ -49,8 +49,5 @@ public class Fotografo {
 	}
 	public void setNomeArte(String nomeArte) {
 		this.nomeArte = nomeArte;
-	}
-
-	
-	
+	}	
 }

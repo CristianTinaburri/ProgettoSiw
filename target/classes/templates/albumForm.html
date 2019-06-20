@@ -5,7 +5,7 @@
 
 	<div th:insert="~{navbar :: navbarAdmin}"></div>
 
-	<h4 style="text-align:center;">Inserisci i dati di un Album</h4>
+	<h4 style="text-align:center;">Inserisci i dati dell'Album che vuoi aggiungere.</h4>
 	<form th:action="@{/album}" method="POST" th:object="${album}" class="form">
 		<div class="container form-group">
 			Titolo album: <input type="text" th:field="*{titoloAlbum}"  class="form-control" /><br/>
@@ -16,4 +16,3 @@
 	</form>
 </body>
 </html>
-<!--  -->

@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Implementation-Title: siw-project-2019
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: CristianDesk
+Built-By: PMassi
 Implementation-Vendor-Id: com.example
-Build-Jdk: 1.8.0_65
+Build-Jdk: 1.8.0_161
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/siw-project-2019-front-end-cris-gio
+ ot-starter-parent/Progetto-SIW-2019
 Created-By: Maven Integration for Eclipse
 

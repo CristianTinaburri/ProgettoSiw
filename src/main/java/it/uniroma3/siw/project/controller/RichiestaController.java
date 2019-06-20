@@ -39,23 +39,4 @@ public class RichiestaController {
         model.addAttribute("richieste", this.richiestaService.tuttiRichieste()); // this.richiestaService.tuttiRichieste()
 		return "/richiestaAdmin";
 	}
-	
-	/*
-	 *  @RequestMapping(value = "/accettaRichiesta", method = RequestMethod.POST)
-	    public String accettaRichiesta(@Valid @ModelAttribute("id") Long id, Model model) {
-			Richiesta richiesta = richiestaService.richiestaPerNominativo(id); 
-			if (richiesta!=null)
-				richiestaService.cancellaRichiesta(richiesta);
-			return "/richiestaAdmin";
-		}
-		
-		@RequestMapping(value = "/deleteRichiesta", method = RequestMethod.POST)
-	    public String deleteRichiesta(@Valid @ModelAttribute("nominativo") String nominativo, Model model) {
-			Richiesta richiesta = richiestaService.richiestaPerNominativo(nominativo); 
-			if (richiesta!=null)
-				richiestaService.cancellaRichiesta(richiesta);
-			return "/richiestaAdmin";
-		}
-	 * */
-
 }

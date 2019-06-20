@@ -65,7 +65,5 @@ public class Richiesta {
 
 	public void setMessaggio(String messaggio) {
 		this.messaggio = messaggio;
-	}
-	
-		
+	}		
 }

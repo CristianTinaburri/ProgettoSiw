@@ -48,7 +48,7 @@ public class FotografoController {
 	
 	
 	@RequestMapping(value = "/fotografo", method = RequestMethod.POST)
-    public String newAllievo(@Valid @ModelAttribute("fotografo") Fotografo fotografo, 
+    public String newFotografo(@Valid @ModelAttribute("fotografo") Fotografo fotografo, 
     									Model model, BindingResult bindingResult) {
 		this.fotografoValidator.validate(fotografo, bindingResult);
 		 if (this.fotografoService.esistente(fotografo)) {
@@ -78,7 +78,5 @@ public class FotografoController {
     public String getFotografo(@PathVariable("nomeArte") String nomeArte, Model model) {
         model.addAttribute("fotografo", this.fotografoService.fotografoPerNomeArte(nomeArte));
     	return "/fotografo";
-    }
-    
-    
+    }   
 }

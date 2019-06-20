@@ -5,7 +5,7 @@
 
 	<div th:insert="~{navbar :: navbarAdmin}"></div>
 
-	<h4 style="text-align:center;">Inserisci i dati di una foto</h4>
+	<h4 style="text-align:center;">Inserisci i dati della Foto che vuoi aggiungere.</h4>
 	<form th:action="@{/foto}" method="POST" th:object="${foto}" class="form">
 		<div class="container form-group">
 			Titolo Foto: <input type="text" th:field="*{titoloFoto}"  class="form-control" /><br/>

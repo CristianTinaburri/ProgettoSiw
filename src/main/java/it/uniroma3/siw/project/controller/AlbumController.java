@@ -29,13 +29,7 @@ public class AlbumController {
 		model.addAttribute("album", new Album());
 	    return "/albumForm";
 	   }
-	/*
-	@RequestMapping("/albumAdmin")
-	public String albumList(Model model) {
-		model.addAttribute("albums", new Album());
-	    return "/albumListAdmin";
-	}*/
-	
+
 	@RequestMapping(value = "/albumAdmin")
     public String showAlbumsAdmin(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
@@ -47,14 +41,7 @@ public class AlbumController {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());
         return "/albumList";
 	}
-	/*
-	
-	@RequestMapping(value = "/listaAlbum")
-    public String showAlbums(@Valid @ModelAttribute("album") Album album, Model model) {
-		model.addAttribute("albums", this.albumService.tuttiAlbum());
-        return "/albumList";
-	}
-	*/
+
 	@RequestMapping(value = "/album", method = RequestMethod.POST)
     public String newAlbum(@Valid @ModelAttribute("album") Album album, 
     									Model model, BindingResult bindingResult) {
@@ -62,8 +49,7 @@ public class AlbumController {
 		 if (this.albumService.esistente(album)) {
 	            model.addAttribute("exists", "l'album già esiste");
 	            return "/albumForm";
-	        }
-		
+	        }	
 		 else {
 	            if (!bindingResult.hasErrors()) {
 	                this.albumService.inserisciAlbum(album);
@@ -74,11 +60,9 @@ public class AlbumController {
 	        return "/albumForm";
 	}
 	
-	
     @RequestMapping(value = "/album/{titoloAlbum}", method = RequestMethod.GET)
     public String getAlbum(@PathVariable("titoloAlbum") String titoloAlbum, Model model) {
         model.addAttribute("album", this.albumService.albumPerTitolo(titoloAlbum));
     	return "/album";
-    }
-	
+    }	
 }

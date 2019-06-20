@@ -1,8 +1,5 @@
 package it.uniroma3.siw.project.model;
 
-
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -52,6 +49,4 @@ public class Album {
 	public void setData(String data) {
 		this.data = data;
 	}
-	
-
 }

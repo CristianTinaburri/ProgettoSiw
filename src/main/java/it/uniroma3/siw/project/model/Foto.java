@@ -56,6 +56,5 @@ public class Foto {
 	}
 	public void setUri(String uri) {
 		this.uri = uri;
-	}
-	
+	}	
 }

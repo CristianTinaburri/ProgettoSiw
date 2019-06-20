@@ -60,9 +60,9 @@ public class DBPopulation implements ApplicationRunner{
 		this.albumService.inserisciAlbum(alb2);
 		this.albumService.inserisciAlbum(alb3);
 		
-		Richiesta r1 = new Richiesta("Marcello", "Ponzi","marciodentro", "asd");
-		Richiesta r2 = new Richiesta("asd", "asd","marciodentro", "asd");
-		Richiesta r3 = new Richiesta("asd", "Ponzi","sdsd", "asd");
+		Richiesta r1 = new Richiesta("Matteo", "mr@yahoo.it","foto1", "Vorrei poter utilizzare questa foto");
+        Richiesta r2 = new Richiesta("Federica", "fg@gmail.com","foto2", "Mi servirebbe questa foto per un progetto");
+        Richiesta r3 = new Richiesta("Carlo", "cs@gmail.com","foto3", "Bellissima questa foto, la posso acquistare?");
 		this.richiestaService.inserisciRichieste(r1);
 		this.richiestaService.inserisciRichieste(r2);
 		this.richiestaService.inserisciRichieste(r3);

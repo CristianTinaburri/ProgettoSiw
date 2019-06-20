@@ -12,5 +12,3 @@ public interface FotografoRepository extends CrudRepository<Fotografo, Long> {
 	public List<Fotografo> findByNomeAndCognome(String nome, String cognome);
 	public Fotografo findByNomeArte (String nomeArte);	
 }
-
-

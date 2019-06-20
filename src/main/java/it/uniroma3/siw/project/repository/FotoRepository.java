@@ -12,5 +12,3 @@ public interface FotoRepository extends CrudRepository<Foto, Long> {
 	public List<Foto> findByTitoloAlbum(String titoloAlbum);
 	public List<Foto> findByFotografo(String fotografo);
 }
-
-

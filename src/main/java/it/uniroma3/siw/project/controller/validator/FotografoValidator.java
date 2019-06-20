@@ -7,8 +7,6 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.project.model.Fotografo;
 
-
-
 @Component
 public class FotografoValidator implements Validator {
 
@@ -23,5 +21,4 @@ public class FotografoValidator implements Validator {
     public boolean supports(Class<?> aClass) {
         return Fotografo.class.equals(aClass);
     }
-
 }

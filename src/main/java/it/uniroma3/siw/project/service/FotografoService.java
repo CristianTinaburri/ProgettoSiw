@@ -46,7 +46,5 @@ public class FotografoService {
 			return true;
 		else 
 			return false;
-	}	
-	
+	}		
 }
-
