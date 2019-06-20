@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import it.uniroma3.siw.project.model.Album;
 import it.uniroma3.siw.project.model.Foto;
 import it.uniroma3.siw.project.model.Fotografo;
-import it.uniroma3.siw.project.model.Richieste;
+import it.uniroma3.siw.project.model.Richiesta;
 import it.uniroma3.siw.project.service.AlbumService;
 import it.uniroma3.siw.project.service.FotoService;
 import it.uniroma3.siw.project.service.FotografoService;
@@ -60,9 +60,9 @@ public class DBPopulation implements ApplicationRunner{
 		this.albumService.inserisciAlbum(alb2);
 		this.albumService.inserisciAlbum(alb3);
 		
-		Richieste r1 = new Richieste("Marcello", "Ponzi","marciodentro", "asd");
-		Richieste r2 = new Richieste("asd", "asd","marciodentro", "asd");
-		Richieste r3 = new Richieste("asd", "Ponzi","sdsd", "asd");
+		Richiesta r1 = new Richiesta("Marcello", "Ponzi","marciodentro", "asd");
+		Richiesta r2 = new Richiesta("asd", "asd","marciodentro", "asd");
+		Richiesta r3 = new Richiesta("asd", "Ponzi","sdsd", "asd");
 		this.richiestaService.inserisciRichieste(r1);
 		this.richiestaService.inserisciRichieste(r2);
 		this.richiestaService.inserisciRichieste(r3);

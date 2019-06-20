@@ -36,7 +36,6 @@ public class AlbumController {
 	    return "/albumListAdmin";
 	}*/
 	
-	
 	@RequestMapping(value = "/albumAdmin")
     public String showAlbumsAdmin(@Valid @ModelAttribute("album") Album album, Model model) {
 		model.addAttribute("albums", this.albumService.tuttiAlbum());

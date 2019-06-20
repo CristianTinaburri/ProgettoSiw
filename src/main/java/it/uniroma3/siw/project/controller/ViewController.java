@@ -42,6 +42,10 @@ public class ViewController {
 			return "/login";
 		}
 	}
+	@RequestMapping("/adminDashboard")
+    public String adminHome(Model model,HttpSession session) {
+		return "/adminDashboard";
+	}
 	@RequestMapping("/logout")
     public String logout(Model model,HttpSession session) {
 		return "/index";

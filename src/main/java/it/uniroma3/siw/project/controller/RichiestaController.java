@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import it.uniroma3.siw.project.model.Richieste;
+import it.uniroma3.siw.project.model.Richiesta;
 import it.uniroma3.siw.project.service.RichiestaService;
 
 @Controller
@@ -20,24 +20,24 @@ public class RichiestaController {
 	RichiestaService richiestaService;
 	
 	@RequestMapping(value = "/invioRichiestaFoto", method = RequestMethod.POST)
-	public String newAllievo(@Valid @ModelAttribute("richiesta") Richieste richiesta, Model model, BindingResult bindingResult) {
-	    if (this.richiestaService.esistente(richiesta)) {
-	        model.addAttribute("exists", "Il richiesta già esiste");
-	        return "/index";
-	    } else {
-	        if (!bindingResult.hasErrors()) {
-	            this.richiestaService.inserisciRichieste(richiesta);
-	            model.addAttribute("richieste", this.richiestaService.tuttiRichieste());
-	            return "/index";
-	        }
-	    }
+	public String newRichiesta( @Valid @ModelAttribute("nominativo") String nominativo,
+								@Valid @ModelAttribute(value="email") String email,
+								@Valid @ModelAttribute("titoloFoto") String titoloFoto,
+								@Valid @ModelAttribute("messaggio") String messaggio,
+								Model model, 
+								BindingResult bindingResult) {
+		Richiesta richiesta = new Richiesta(nominativo, email, titoloFoto, messaggio);
+		if (!bindingResult.hasErrors()) {
+            this.richiestaService.inserisciRichieste(richiesta);
+            return "/index";
+        }
 	    return "/index";
 	}
 	
 	@RequestMapping(value = "/richiestaAdmin", method = RequestMethod.GET)
-    public String richiestaAdmin(Model model, @Valid @ModelAttribute("richieste") Richieste richieste) {
-		model.addAttribute("richieste", richiestaService.tuttiRichieste());
+    public String richiestaAdmin(Model model) {
+        model.addAttribute("richieste", this.richiestaService.tuttiRichieste()); // this.richiestaService.tuttiRichieste()
 		return "/richiestaAdmin";
-	} //  new ArrayList<Richieste>()
+	}
 
 }

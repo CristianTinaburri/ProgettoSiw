@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import it.uniroma3.siw.project.model.Richieste;
+import it.uniroma3.siw.project.model.Richiesta;
 
-public interface RichiesteRepository extends CrudRepository<Richieste, Long> {
+public interface RichiesteRepository extends CrudRepository<Richiesta, Long> {
 	
-	public Richieste findByNominativo(String nominativo);
-	public Richieste findByTitoloFoto (String titoloFoto);
-	
+	public Richiesta findByNominativo(String nominativo);
+	public Richiesta findByTitoloFoto (String titoloFoto);
 }
 
 

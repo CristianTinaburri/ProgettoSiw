@@ -28,15 +28,15 @@
 		</thead>
 		<tbody>
 			<tr th:each="richiesta : ${richieste}">
-			    <td th:text="${richiesta.nominativo}"></td>
-			    <td th:text="${richiesta.email}"></td>
-			    <td th:text="${richiesta.titoloFoto}"></td>
-			    <td th:text="${richiesta.messaggio}"></td>
-			    <td>
+			    <td style="text-align: center;" th:text="${richiesta.nominativo}"></td>
+			    <td style="text-align: center;" th:text="${richiesta.email}"></td>
+			    <td style="text-align: center;" th:text="${richiesta.titoloFoto}"></td>
+			    <td style="text-align: center;" th:text="${richiesta.messaggio}"></td>
+			    <td style="text-align: center;">
 				    <!-- Trigger the modal with a button -->
-					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Visualizza Richiesta</button>
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Visualizza Richiesta</button>
 					<!-- Modal -->
-					<div id="myModal" class="modal fade" role="dialog">
+					<div style="text-align: left;" id="myModal" class="modal fade" role="dialog">
 					   <div class="modal-dialog">
 					      <!-- Modal content-->
 					      <div class="modal-content">
